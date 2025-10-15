@@ -1,8 +1,6 @@
-using System.Security.Cryptography.X509Certificates;
-
 namespace Lab07;
 
-public class DoublyLinkedList<T> : IDoubleEndedCollection<T>
+public class DoublyLinkedList<T> : IDoubleEndedCollection<T>, IEnumerable<T>
 {
     private DNode<T>? _head = null;
     private DNode<T>? _tail = null;

@@ -1,5 +1,3 @@
-using NuGet.Frameworks;
-
 namespace Lab07.Tests;
 
 public class LinkedListStartingEmptyTests
