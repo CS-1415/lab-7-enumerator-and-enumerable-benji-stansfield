@@ -1,6 +1,10 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
 namespace Lab07;
 
-public class LinkedListEnumerator<T>
+public class LinkedListEnumerator<T> : IEnumerator<T>
 {
     private DNode<T>? firstNode;
     private DNode<T>? currentNode;
@@ -29,11 +33,16 @@ public class LinkedListEnumerator<T>
         }
     }
 
+    public void Reset()
+    {
+        currentNode = null;
+    }
+
     public void Dispose()
     {
 
     }
-    
+
     public T Current
     {
         get
@@ -44,4 +53,6 @@ public class LinkedListEnumerator<T>
                 return currentNode.Value;
         }
     }
+
+    object IEnumerator.Current => Current!;
 }

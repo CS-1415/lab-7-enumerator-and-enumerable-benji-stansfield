@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+
 namespace Lab07;
 
 public class DoublyLinkedList<T> : IDoubleEndedCollection<T>, IEnumerable<T>
@@ -105,5 +108,15 @@ public class DoublyLinkedList<T> : IDoubleEndedCollection<T>, IEnumerable<T>
             _tail = _head;
             _head = temp.Previous;
         }
+    }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+        return new LinkedListEnumerator<T>(_head);
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 }
